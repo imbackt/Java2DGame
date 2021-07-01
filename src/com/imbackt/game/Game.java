@@ -1,5 +1,7 @@
 package com.imbackt.game;
 
+import com.imbackt.game.gfx.SpriteSheet;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
@@ -24,6 +26,8 @@ public class Game extends Canvas implements Runnable {
 
     private final BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
     private final int[] pixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
+
+    private SpriteSheet spriteSheet = new SpriteSheet("/sprite_sheet.png");
 
     public Game() {
         setMinimumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
